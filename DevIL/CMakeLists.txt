@@ -1,15 +1,17 @@
 cmake_minimum_required(VERSION 2.6)
 
+set(ZLIB_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/thirdparty/zlib-1.2.11/")
+set(ZLIB_LIBRARY "${CMAKE_SOURCE_DIR}/thirdparty/lib/x86/Release/zlibstatic.lib")
+
+set(PNG_PNG_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/thirdparty/lpng1637/")
+set(PNG_LIBRARY "${CMAKE_SOURCE_DIR}/thirdparty/lib/x86/Release/libpng16_static.lib")
+
+set(JPEG_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/thirdparty/libjpeg/")
+set(JPEG_LIBRARY "${CMAKE_SOURCE_DIR}/thirdparty/lib/x86/Release/libjpeg.lib")
+
 project(ImageLib)
-# include our custom modules
-set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
 
 add_subdirectory(src-IL)
 add_subdirectory(src-ILU)
 add_subdirectory(src-ILUT)
-option(IL_TESTS "build DevIL tests" ON)
-if (IL_TESTS)
-    ENABLE_TESTING()
-    Add_Subdirectory(test)
-endif()
 

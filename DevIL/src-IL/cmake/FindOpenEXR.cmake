@@ -11,7 +11,6 @@
 
 
 FIND_PATH(OPENEXR_INCLUDE_DIR ImfIO.h
-    $ENV{OPENEXR_DIR}/include/OpenEXR
     $ENV{OPENEXR_DIR}/include
     $ENV{OPENEXR_DIR}
     ~/Library/Frameworks
