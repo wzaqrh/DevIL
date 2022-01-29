@@ -19,8 +19,8 @@
 
 
 // Linked lists of registered formats
-iFormatL *LoadProcs = NULL;
-iFormatS *SaveProcs = NULL;
+IL_TLVAR iFormatL *LoadProcs = NULL;
+IL_TLVAR iFormatS *SaveProcs = NULL;
 
 
 ILboolean ILAPIENTRY ilRegisterLoad(ILconst_string Ext, IL_LOADPROC Load) {

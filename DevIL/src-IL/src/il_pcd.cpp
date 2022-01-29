@@ -63,15 +63,15 @@ ILboolean ilLoadPcdL(const void *Lump, ILuint Size)
 
 void YCbCr2RGB(ILubyte Y, ILubyte Cb, ILubyte Cr, ILubyte *r, ILubyte *g, ILubyte *b)
 {
-	static const ILdouble c11 = 0.0054980*256;
-	static const ILdouble c12 = 0.0000000*256;
-	static const ILdouble c13 = 0.0051681*256;
-	static const ILdouble c21 = 0.0054980*256;
-	static const ILdouble c22 =-0.0015446*256;
-	static const ILdouble c23 =-0.0026325*256;
-	static const ILdouble c31 = 0.0054980*256;
-	static const ILdouble c32 = 0.0079533*256;
-	static const ILdouble c33 = 0.0000000*256;
+	static constexpr ILdouble c11 = 0.0054980*256;
+	static constexpr ILdouble c12 = 0.0000000*256;
+	static constexpr ILdouble c13 = 0.0051681*256;
+	static constexpr ILdouble c21 = 0.0054980*256;
+	static constexpr ILdouble c22 =-0.0015446*256;
+	static constexpr ILdouble c23 =-0.0026325*256;
+	static constexpr ILdouble c31 = 0.0054980*256;
+	static constexpr ILdouble c32 = 0.0079533*256;
+	static constexpr ILdouble c33 = 0.0000000*256;
 	ILint r1, g1, b1;
 
 	r1 = (ILint)(c11*Y + c12*(Cb-156) + c13*(Cr-137));

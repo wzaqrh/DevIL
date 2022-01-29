@@ -15,7 +15,7 @@
 #include "il_sgi.h"
 #include <limits.h>
 
-static char *FName = NULL;
+static IL_TLVAR char *FName = NULL;
 
 /*----------------------------------------------------------------------------*/
 

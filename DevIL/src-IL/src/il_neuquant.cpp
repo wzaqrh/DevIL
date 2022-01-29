@@ -78,7 +78,7 @@ void	learn();
 // defs for decreasing alpha factor
 #define alphabiasshift	10						// alpha starts at 1.0
 #define initalpha		(((ILint) 1)<<alphabiasshift)
-ILint	alphadec;								// biased by 10 bits
+IL_TLVAR ILint	alphadec;								// biased by 10 bits
 
 // radbias and alpharadbias used for radpower calculation
 #define radbiasshift	8
@@ -90,17 +90,17 @@ ILint	alphadec;								// biased by 10 bits
 // Types and Global Variables
 // --------------------------
    
-unsigned char	*thepicture;			// the input image itself
-int				lengthcount;			// lengthcount = H*W*3
-int				samplefac;				// sampling factor 1..30
+IL_TLVAR unsigned char		*thepicture;			// the input image itself
+IL_TLVAR int				lengthcount;			// lengthcount = H*W*3
+IL_TLVAR int				samplefac;				// sampling factor 1..30
 typedef int		pixel[4];				// BGRc
-static pixel	network[netsize];		// the network itself
-int				netindex[256];			// for network lookup - really 256
-int				bias [netsize];			// bias and freq arrays for learning
-int				freq [netsize];
-int				radpower[initrad];		// radpower for precomputation
+static IL_TLVAR pixel		network[netsize];		// the network itself
+IL_TLVAR int				netindex[256];			// for network lookup - really 256
+IL_TLVAR int				bias [netsize];			// bias and freq arrays for learning
+IL_TLVAR int				freq [netsize];
+IL_TLVAR int				radpower[initrad];		// radpower for precomputation
 
-int netsizethink; // number of colors we want to reduce to, 2-256
+IL_TLVAR int netsizethink; // number of colors we want to reduce to, 2-256
 
 // Initialise network in range (0,0,0) to (255,255,255) and set parameters
 // -----------------------------------------------------------------------

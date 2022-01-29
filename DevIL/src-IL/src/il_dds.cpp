@@ -4,7 +4,7 @@
 // Copyright (C) 2000-2017 by Denton Woods
 // Last modified: 02/28/2009
 //
-// Filename: src-IL/src/il_dds.cpp
+// Filename: src-IL/src/il_dds.c
 //
 // Description: Reads from a DirectDraw Surface (.dds) file.
 //
@@ -31,14 +31,14 @@
 
 // Global variables
 //@TODO: Move these out of global space
-static DDSHEAD	Head;				// Image header
-static DXT10HEAD HeadDXT10;			// DirectX 10 extension header
-static ILubyte	*CompData = NULL;	// Compressed data
-static ILuint	CompSize;			// Compressed size
+static IL_TLVAR DDSHEAD	Head;				// Image header
+static IL_TLVAR DXT10HEAD HeadDXT10;			// DirectX 10 extension header
+static IL_TLVAR ILubyte	*CompData = NULL;	// Compressed data
+static IL_TLVAR ILuint	CompSize;			// Compressed size
 //static ILuint	CompFormat;			// Compressed format
-static ILimage	*Image;
-static ILint	Width, Height, Depth;
-static ILboolean	Has16BitComponents;
+static IL_TLVAR ILimage	*Image;
+static IL_TLVAR ILint	Width, Height, Depth;
+static IL_TLVAR ILboolean	Has16BitComponents;
 
 ILuint CubemapDirections[CUBEMAP_SIDES] = {
 	DDS_CUBEMAP_POSITIVEX,
@@ -182,7 +182,7 @@ ILboolean iCheckDds(DDSHEAD *Head)
 }
 
 
-// Internal function used to check if the HEADER is a valid DirectX 10 extension header.
+//! Reads a .dds file
 ILboolean iCheckDxt10(DXT10HEAD *Head)
 {
 	if (Head->resourceDimension < 2 && Head->resourceDimension > 4)
@@ -850,10 +850,11 @@ ILboolean ReadData(ILuint CompFormat, ILboolean IsDXT10)
 		}
 	}
 	else {
-		if (IsDXT10)
+		if (IsDXT10 || Width * Head.RGBBitCount == 0)
 			Bps = Head.LinearSize;  //@TODO: Head.RGBBitCount is always 0 from the texconv.exe tool?
 		else
 			Bps = Width * Head.RGBBitCount / 8;
+
 		CompSize = Bps * Height * Depth;
 		if (CompSize == 0) {
 			ilSetError(IL_INVALID_FILE_HEADER);
@@ -1144,6 +1145,8 @@ ILboolean ReadMipmaps(ILuint CompFormat, ILboolean IsDXT10)
 		Image->Mipmaps = ilNewImage(Width, Height, Depth, Channels, Bpc);
 		if (Image->Mipmaps == NULL)
 			goto mip_fail;
+		Image->Mipmaps->Type = Image->Type;
+
 		Image = Image->Mipmaps;
 		Image->Origin = IL_ORIGIN_UPPER_LEFT;
 

@@ -16,8 +16,8 @@
 ILuint iTargaSize(void);
 
 
-ILuint CurPos;  // Fake "file" pointer.
-ILuint MaxPos;
+IL_TLVAR ILuint CurPos;  // Fake "file" pointer.
+IL_TLVAR ILuint MaxPos;
 
 
 //! Fake seek function

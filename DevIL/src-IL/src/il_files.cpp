@@ -35,29 +35,29 @@ ILint		ILAPIENTRY iPutcFile(ILubyte Char);
 ILint		ILAPIENTRY iPutcLump(ILubyte Char);
 ILint		ILAPIENTRY iWriteFile(const void *Buffer, ILuint Size, ILuint Number);
 ILint		ILAPIENTRY iWriteLump(const void *Buffer, ILuint Size, ILuint Number);
-ILHANDLE	FileRead = NULL, FileWrite = NULL;
-const void *ReadLump = NULL;
-void 		*WriteLump = NULL;
-ILuint		ReadLumpPos = 0, ReadLumpSize = 0, ReadFileStart = 0, WriteFileStart = 0;
-ILuint		WriteLumpPos = 0, WriteLumpSize = 0;
+IL_TLVAR ILHANDLE	FileRead = NULL, FileWrite = NULL;
+IL_TLVAR const void *ReadLump = NULL;
+IL_TLVAR void 		*WriteLump = NULL;
+IL_TLVAR ILuint		ReadLumpPos = 0, ReadLumpSize = 0, ReadFileStart = 0, WriteFileStart = 0;
+IL_TLVAR ILuint		WriteLumpPos = 0, WriteLumpSize = 0;
 
-fGetcProc	GetcProcCopy;
-fReadProc	ReadProcCopy;
-fSeekRProc	SeekProcCopy;
-fTellRProc	TellProcCopy;
-ILHANDLE	(ILAPIENTRY *iopenCopy)(ILconst_string);
-void		(ILAPIENTRY *icloseCopy)(ILHANDLE);
+IL_TLVAR fGetcProc	GetcProcCopy;
+IL_TLVAR fReadProc	ReadProcCopy;
+IL_TLVAR fSeekRProc	SeekProcCopy;
+IL_TLVAR fTellRProc	TellProcCopy;
+IL_TLVAR ILHANDLE	(ILAPIENTRY *iopenCopy)(ILconst_string);
+IL_TLVAR void		(ILAPIENTRY *icloseCopy)(ILHANDLE);
 
-fPutcProc	PutcProcCopy;
-fSeekWProc	SeekWProcCopy;
-fTellWProc	TellWProcCopy;
-fWriteProc	WriteProcCopy;
-ILHANDLE	(ILAPIENTRY *iopenwCopy)(ILconst_string);
-void		(ILAPIENTRY *iclosewCopy)(ILHANDLE);
+IL_TLVAR fPutcProc	PutcProcCopy;
+IL_TLVAR fSeekWProc	SeekWProcCopy;
+IL_TLVAR fTellWProc	TellWProcCopy;
+IL_TLVAR fWriteProc	WriteProcCopy;
+IL_TLVAR ILHANDLE	(ILAPIENTRY *iopenwCopy)(ILconst_string);
+IL_TLVAR void		(ILAPIENTRY *iclosewCopy)(ILHANDLE);
 
-ILboolean	UseCache = IL_FALSE;
-ILubyte		*Cache = NULL;
-ILuint		CacheSize, CachePos, CacheStartPos, CacheBytesRead;
+IL_TLVAR ILboolean	UseCache = IL_FALSE;
+IL_TLVAR ILubyte		*Cache = NULL;
+IL_TLVAR ILuint		CacheSize, CachePos, CacheStartPos, CacheBytesRead;
 
 // "Fake" size functions
 //  Definitions are in il_size.c.

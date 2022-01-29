@@ -897,7 +897,7 @@ ILAPI void ILAPIENTRY ilSetPal(ILpal *Pal)
 }
 
 
-ILuint CurSort = 0;
+IL_TLVAR ILuint CurSort = 0;
 typedef struct COL_CUBE
 {
 	ILubyte	Min[3];

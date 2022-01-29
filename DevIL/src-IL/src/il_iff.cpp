@@ -23,8 +23,8 @@ typedef struct _iff_chunk {
 } iff_chunk;
 
 #define CHUNK_STACK_SIZE (32)
-static iff_chunk chunkStack[CHUNK_STACK_SIZE];
-static int chunkDepth = -1;
+static IL_TLVAR iff_chunk chunkStack[CHUNK_STACK_SIZE];
+static IL_TLVAR int chunkDepth = -1;
 
 iff_chunk iff_begin_read_chunk();
 void iff_end_read_chunk();

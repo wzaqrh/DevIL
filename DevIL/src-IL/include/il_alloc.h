@@ -33,8 +33,8 @@
 #include <IL/il.h>
 
 
-__ALLOC_EXTERN mAlloc ialloc_ptr;
-__ALLOC_EXTERN mFree  ifree_ptr;
+__ALLOC_EXTERN IL_TLVAR mAlloc ialloc_ptr;
+__ALLOC_EXTERN IL_TLVAR mFree  ifree_ptr;
 
 
 

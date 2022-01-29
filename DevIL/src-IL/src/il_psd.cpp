@@ -562,9 +562,9 @@ ILuint *GetCompChanLen(PSDHEAD *Head)
 
 
 
-static const ILuint READ_COMPRESSED_SUCCESS					= 0;
-static const ILuint READ_COMPRESSED_ERROR_FILE_CORRUPT		= 1;
-static const ILuint READ_COMPRESSED_ERROR_FILE_READ_ERROR	= 2;
+static constexpr ILuint READ_COMPRESSED_SUCCESS					= 0;
+static constexpr ILuint READ_COMPRESSED_ERROR_FILE_CORRUPT		= 1;
+static constexpr ILuint READ_COMPRESSED_ERROR_FILE_READ_ERROR	= 2;
 
 static ILuint ReadCompressedChannel(const ILuint ChanLen, ILuint Size, ILubyte* Channel)
 {

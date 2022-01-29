@@ -67,8 +67,8 @@ typedef struct DXT10HEAD
 #pragma pack(pop, dxt10_struct)
 #endif
 
-
 // use cast to struct instead of RGBA_MAKE as struct is
+//  much
 //  much
 typedef struct Color8888
 {
@@ -371,7 +371,7 @@ void		CorrectEndDXT1(ILushort *ex0, ILushort *ex1, ILboolean HasAlpha);
 void		PreMult(ILushort *Data, ILubyte *Alpha);
 
 
-extern ILuint CubemapDirections[CUBEMAP_SIDES];
+extern IL_TLVAR ILuint CubemapDirections[CUBEMAP_SIDES];
 
 #ifdef __cplusplus
 }

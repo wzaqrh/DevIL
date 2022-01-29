@@ -18,6 +18,6 @@
 
 
 // the currently-bound image
-extern ILuint CurName;
+extern IL_TLVAR ILuint CurName;
 
 #endif//IMAGESTACK_H

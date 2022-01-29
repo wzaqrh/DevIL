@@ -389,9 +389,9 @@ file_read_error:
 #ifndef IL_NO_PNG
 // 08-22-2008: Copying a lot of this over from il_png.c for the moment.
 // @TODO: Make .ico and .png use the same functions.
-png_structp ico_png_ptr = NULL;
-png_infop   ico_info_ptr = NULL;
-ILint		ico_color_type;
+IL_TLVAR png_structp ico_png_ptr = NULL;
+IL_TLVAR png_infop   ico_info_ptr = NULL;
+IL_TLVAR ILint		ico_color_type;
 
 #define GAMMA_CORRECTION 1.0  // Doesn't seem to be doing anything...
 

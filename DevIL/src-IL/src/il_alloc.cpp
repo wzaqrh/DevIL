@@ -35,8 +35,8 @@
 static void ILAPIENTRY DefaultFreeFunc(const void * CONST_RESTRICT Ptr);
 static void* ILAPIENTRY DefaultAllocFunc(const ILsizei Size);
 
-static mAlloc ialloc_ptr = DefaultAllocFunc;
-static mFree  ifree_ptr = DefaultFreeFunc;
+static IL_TLVAR mAlloc ialloc_ptr = DefaultAllocFunc;
+static IL_TLVAR mFree  ifree_ptr = DefaultFreeFunc;
 
 /*** Vector Allocation/Deallocation Function ***/
 #ifdef VECTORMEM

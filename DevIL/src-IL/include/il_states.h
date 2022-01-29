@@ -22,7 +22,7 @@ ILboolean ilAble(ILenum Mode, ILboolean Flag);
 
 #define IL_ATTRIB_STACK_MAX 32
 
-ILuint ilCurrentPos = 0;  // Which position on the stack
+IL_TLVAR ILuint ilCurrentPos = 0;  // Which position on the stack
 
 //
 // Various states
@@ -115,7 +115,7 @@ typedef struct IL_HINTS
 
 } IL_HINTS;
 
-IL_HINTS ilHints;
+IL_TLVAR IL_HINTS ilHints;
 
 
 #ifndef IL_NO_BLP

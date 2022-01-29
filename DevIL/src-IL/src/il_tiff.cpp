@@ -1094,7 +1094,7 @@ ILboolean iSaveTiffInternal(/*ILconst_string Filename*/)
 // 20 bytes.)
 char *iMakeString()
 {
-	static char TimeStr[20];
+	static IL_TLVAR char TimeStr[20];
 	time_t		Time;
 	struct tm	*CurTime;
 

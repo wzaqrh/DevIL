@@ -41,9 +41,9 @@ ILint		readpng_init(void);
 ILboolean	readpng_get_image(ILdouble display_exponent);
 void		readpng_cleanup(void);
 
-png_structp png_ptr = NULL;
-png_infop   info_ptr = NULL;
-ILint		png_color_type;
+IL_TLVAR png_structp png_ptr = NULL;
+IL_TLVAR png_infop   info_ptr = NULL;
+IL_TLVAR ILint		png_color_type;
 
 #define GAMMA_CORRECTION 1.0  // Doesn't seem to be doing anything...
 

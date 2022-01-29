@@ -21,7 +21,7 @@
 #include "il_gif.h"
 
 
-ILenum	GifType;
+IL_TLVAR ILenum	GifType;
 
 //! Checks if the file specified in FileName is a valid Gif file.
 ILboolean ilIsValidGif(ILconst_string FileName)
@@ -441,17 +441,17 @@ ILboolean SkipExtensions(GFXCONTROL *Gfx)
 
 #define MAX_CODES 4096
 
-ILint	curr_size, clear, ending, newcodes, top_slot, slot, navail_bytes = 0, nbits_left = 0;
-ILubyte	b1;
-ILubyte	byte_buff[257];
-ILubyte	*pbytes;
-ILubyte	*stack;
-ILubyte	*suffix;
-ILshort	*prefix;
+IL_TLVAR ILint	curr_size, clear, ending, newcodes, top_slot, slot, navail_bytes = 0, nbits_left = 0;
+IL_TLVAR ILubyte	b1;
+IL_TLVAR ILubyte	byte_buff[257];
+IL_TLVAR ILubyte	*pbytes;
+IL_TLVAR ILubyte	*stack;
+IL_TLVAR ILubyte	*suffix;
+IL_TLVAR ILshort	*prefix;
 
-ILboolean success;
+IL_TLVAR ILboolean success;
 
-ILuint code_mask[13] =
+IL_TLVAR ILuint code_mask[13] =
 {
    0L,
    0x0001L, 0x0003L,

@@ -17,7 +17,7 @@
 #include "il_internal.h"
 #include "il_stack.h"
 
-ILuint CurName = 0;
+IL_TLVAR ILuint CurName = 0;
 
 // Internal stuff
 
@@ -33,15 +33,15 @@ typedef struct iFree
 
 static ILboolean iEnlargeStack();
 
-static ILuint		StackSize = 0;
-static ILuint		LastUsed = 0;
+static IL_TLVAR ILuint		StackSize = 0;
+static IL_TLVAR ILuint		LastUsed = 0;
 
 // two fixed slots - slot 0 is default (fallback) image, slot 1 is temp image
-static ILimage		**ImageStack = NULL;
+static IL_TLVAR ILimage		**ImageStack = NULL;
 
-static iFree		*FreeNames = NULL;
-static ILboolean	OnExit = IL_FALSE;
-static ILboolean	ParentImage = IL_TRUE;
+static IL_TLVAR iFree		*FreeNames = NULL;
+static IL_TLVAR ILboolean	OnExit = IL_FALSE;
+static IL_TLVAR ILboolean	ParentImage = IL_TRUE;
 
 
 //! Creates Num images and puts their index in Images - similar to glGenTextures().
@@ -600,7 +600,7 @@ ILboolean iEnlargeStack()
 }
 
 
-static ILboolean IsInit = IL_FALSE;
+static IL_TLVAR ILboolean IsInit = IL_FALSE;
 
 // To keep Visual Studio happy with its unhappiness with ILAPIENTRY for atexit
 void ilRemoveRegisteredInternal()

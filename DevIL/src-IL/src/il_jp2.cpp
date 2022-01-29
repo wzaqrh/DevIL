@@ -28,7 +28,7 @@
 
 ILboolean iIsValidJp2(void);
 
-ILboolean JasperInit = IL_FALSE;
+IL_TLVAR ILboolean JasperInit = IL_FALSE;
 
 
 //! Checks if the file specified in FileName is a valid .jp2 file.
@@ -368,7 +368,7 @@ static int iJp2_file_close(jas_stream_obj_t *obj)
 	return 0;  // We choose when we want to close the file.
 }
 
-static jas_stream_ops_t jas_stream_devilops = {
+static constexpr jas_stream_ops_t jas_stream_devilops = {
 	iJp2_file_read,
 	iJp2_file_write,
 	iJp2_file_seek,

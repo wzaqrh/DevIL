@@ -116,7 +116,7 @@ extern "C" {
 		#undef USE_WIN32_ASM
 	#endif
 #endif
-extern ILimage *iCurImage;
+extern IL_TLVAR ILimage *iCurImage;
 #define BIT_0	0x00000001
 #define BIT_1	0x00000002
 #define BIT_2	0x00000004

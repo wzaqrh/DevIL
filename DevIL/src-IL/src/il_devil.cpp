@@ -316,11 +316,11 @@ ILubyte* ILAPIENTRY ilGetPalette(void)
 //	(http://www.newscientist.com/news/news.jsp?id=ns99991775)
 //	*(http://www.space.com/scienceastronomy/universe_color_020308.html)*
 //ILfloat ClearRed = 0.269f, ClearGreen = 0.388f, ClearBlue = 0.342f, ClearAlpha = 0.0f;
-static ILfloat ClearRed   = 1.0f;
-static ILfloat ClearGreen = 0.972549f;
-static ILfloat ClearBlue  = 0.90588f;
-static ILfloat ClearAlpha = 0.0f;
-static ILfloat ClearLum   = 1.0f;
+static IL_TLVAR ILfloat ClearRed   = 1.0f;
+static IL_TLVAR ILfloat ClearGreen = 0.972549f;
+static IL_TLVAR ILfloat ClearBlue  = 0.90588f;
+static IL_TLVAR ILfloat ClearAlpha = 0.0f;
+static IL_TLVAR ILfloat ClearLum   = 1.0f;
 
 void ILAPIENTRY ilClearColour(ILclampf Red, ILclampf Green, ILclampf Blue, ILclampf Alpha)
 {

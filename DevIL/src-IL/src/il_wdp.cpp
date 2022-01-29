@@ -118,7 +118,7 @@ ERR ilPKImageEncode_WritePixels_DevIL(PKImageEncode* pIE, U32 cLine, U8* pbPixel
     struct WMPStream* pS = pIE->pStream;
     size_t cbLineM = 0, cbLineS = 0;
     I32 i = 0;
-    static U8 pPadding[4] = {0};
+    static IL_TLVAR U8 pPadding[4] = {0};
 
     // header
     if (!pIE->fHeaderDone)

@@ -17,7 +17,7 @@
 
 ILimage *iConvertPalette(ILimage *Image, ILenum DestFormat)
 {
-	static const ILfloat LumFactor[3] = { 0.212671f, 0.715160f, 0.072169f };  // http://www.inforamp.net/~poynton/ and libpng's libpng.txt - Used for conversion to luminance.
+	static constexpr ILfloat LumFactor[3] = { 0.212671f, 0.715160f, 0.072169f };  // http://www.inforamp.net/~poynton/ and libpng's libpng.txt - Used for conversion to luminance.
 	ILimage		*NewImage = NULL, *CurImage = NULL;
 	ILuint		i, j, k, c, Size, LumBpp = 1;
 	ILfloat		Resultf;

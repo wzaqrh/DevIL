@@ -17,8 +17,8 @@
 #define IL_ERROR_STACK_SIZE 32  // Needed elsewhere?
 
 
-ILenum	ilErrorNum[IL_ERROR_STACK_SIZE];
-ILint	ilErrorPlace = (-1);
+IL_TLVAR ILenum	ilErrorNum[IL_ERROR_STACK_SIZE];
+IL_TLVAR ILint	ilErrorPlace = (-1);
 
 
 // Sets the current error

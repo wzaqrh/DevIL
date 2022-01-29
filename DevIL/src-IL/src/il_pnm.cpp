@@ -28,11 +28,11 @@ using namespace std;
 #define MAX_BUFFER 180  
 
 //@TODO: Get rid of these globals
-static ILbyte LineBuffer[MAX_BUFFER];
-static ILbyte SmallBuff[MAX_BUFFER];
+static IL_TLVAR ILbyte LineBuffer[MAX_BUFFER];
+static IL_TLVAR ILbyte SmallBuff[MAX_BUFFER];
 
 // Can't read direct bits from a lump yet
-ILboolean IsLump = IL_FALSE;
+IL_TLVAR ILboolean IsLump = IL_FALSE;
 
 
 //! Checks if the file specified in FileName is a valid .pnm file.
@@ -390,7 +390,7 @@ ILimage *ilReadAsciiPpm(PPMINFO *Info)
 
 ILimage *ilReadBinaryPpm(PPMINFO *Info)
 {
-	ILuint Size;
+	ILuint	Size;
 
 	Size = Info->Width * Info->Height * Info->Bpp;
 
@@ -640,7 +640,7 @@ ILboolean iGetWord(ILboolean final)
 }
 
 
-ILstring FName = NULL;
+IL_TLVAR ILstring FName = NULL;
 
 //! Writes a Pnm file
 ILboolean ilSavePnm(const ILstring FileName)

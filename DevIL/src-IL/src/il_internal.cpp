@@ -16,7 +16,7 @@
 #include <stdlib.h>
 
 
-ILimage *iCurImage = NULL;
+IL_TLVAR ILimage *iCurImage = NULL;
 
 
 /* Siigron: added this for Linux... a #define should work, but for some reason
@@ -202,7 +202,7 @@ ILbyte *iFgets(char *buffer, ILuint maxlen)
 // There is also a version that is accurate for all integers
 // < 2^31, if we should need it
 
-static int table[] = {
+static constexpr int table[] = {
 	0,    16,  22,  27,  32,  35,  39,  42,  45,  48,  50,  53,  55,  57,
 	59,   61,  64,  65,  67,  69,  71,  73,  75,  76,  78,  80,  81,  83,
 	84,   86,  87,  89,  90,  91,  93,  94,  96,  97,  98,  99, 101, 102,

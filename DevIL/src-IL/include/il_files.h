@@ -26,15 +26,15 @@ __FILES_EXTERN void ILAPIENTRY iRestoreReadFuncs(void);
 __FILES_EXTERN void ILAPIENTRY iPreserveWriteFuncs(void);
 __FILES_EXTERN void ILAPIENTRY iRestoreWriteFuncs(void);
 
-__FILES_EXTERN fEofProc		EofProc;
-__FILES_EXTERN fGetcProc	GetcProc;
-__FILES_EXTERN fReadProc	ReadProc;
-__FILES_EXTERN fSeekRProc	SeekRProc;
-__FILES_EXTERN fSeekWProc	SeekWProc;
-__FILES_EXTERN fTellRProc	TellRProc;
-__FILES_EXTERN fTellWProc	TellWProc;
-__FILES_EXTERN fPutcProc	PutcProc;
-__FILES_EXTERN fWriteProc	WriteProc;
+__FILES_EXTERN IL_TLVAR fEofProc		EofProc;
+__FILES_EXTERN IL_TLVAR fGetcProc	GetcProc;
+__FILES_EXTERN IL_TLVAR fReadProc	ReadProc;
+__FILES_EXTERN IL_TLVAR fSeekRProc	SeekRProc;
+__FILES_EXTERN IL_TLVAR fSeekWProc	SeekWProc;
+__FILES_EXTERN IL_TLVAR fTellRProc	TellRProc;
+__FILES_EXTERN IL_TLVAR fTellWProc	TellWProc;
+__FILES_EXTERN IL_TLVAR fPutcProc	PutcProc;
+__FILES_EXTERN IL_TLVAR fWriteProc	WriteProc;
 
 __FILES_EXTERN ILHANDLE			ILAPIENTRY iDefaultOpen(ILconst_string FileName);
 __FILES_EXTERN void		        ILAPIENTRY iDefaultClose(ILHANDLE Handle);
